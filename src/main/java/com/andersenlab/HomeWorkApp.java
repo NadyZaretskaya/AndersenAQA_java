@@ -39,15 +39,15 @@ public class HomeWorkApp {
      Если value меньше 0 (0 включительно), то в консоль метод должен вывести сообщение “Красный”, если лежит в пределах
      от 0 (0 исключительно) до 100 (100 включительно), то “Желтый”, если больше 100 (100 исключительно) - “Зеленый”;
     */
-    private static void printColor(int number) {
+    private static void printColor(int value) {
         String redColor = "\033[0;31m";
         String greenColor = "\033[0;32m";
         String yellowColor = "\033[0;33m";
         String resetColor = "\033[0m";
 
-        if (number <= 0)
+        if (value <= 0)
             System.out.println(redColor + "Красный\n" + resetColor);
-        else if (number > 0 && number <= 100)
+        else if (value > 0 && value <= 100)
             System.out.println(yellowColor + "Желтый\n" + resetColor);
         else
             System.out.println(greenColor + "Зеленый\n" + resetColor);
