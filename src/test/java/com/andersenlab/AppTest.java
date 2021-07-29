@@ -1,11 +1,11 @@
-package org.example;
+package com.andersenlab;
 
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
 /**
- * Unit test for simple App.
+ * Unit test for simple HomeWorkApp.
  */
 public class AppTest 
 {
