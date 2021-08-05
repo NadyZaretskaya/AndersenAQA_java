@@ -101,18 +101,18 @@ public class Employee {
 
     public static void printEmployees(Employee employees[]) {
         for (Employee employee : employees) {
-            System.out.println(employee.toString());
+            System.out.println(employee);
         }
     }
 
     public static void printEmployees(Employee employee) {
-        System.out.println("Only 1 required employee: \n" + employee.toString() + "-------------------");
+        System.out.println("Only 1 required employee: \n" + employee + "-------------------");
     }
 
     public static void filterByAge(Employee[] employees, int age){
         for (Employee employee : employees) {
             if (employee.getAge() > age) {
-                System.out.println(employee.toString());
+                System.out.println(employee);
             }
         }
     }
