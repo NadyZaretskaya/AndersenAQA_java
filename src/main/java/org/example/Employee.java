@@ -14,17 +14,29 @@ public class Employee {
     private String position;
     private String email;
     private String phone;
-    private int salary;
+    private double salary;
     private int age;
 
 
-    public Employee(String employeeName, String position, String email, String phone, int salary, int age) {
-        this.employeeName = employeeName;
-        this.position = position;
+    public Employee(String employeeName, String position, String email, String phone, double salary, int age) {
+        if (employeeName != null) {
+            this.employeeName = employeeName;
+        } else {
+            System.out.print("Employee Name is required!\n");
+        }
+        if (position != null) {
+            this.position = position;
+        } else {
+            System.out.print("Employee position is required!\n");
+        }
         this.email = email;
         this.phone = phone;
         this.salary = salary;
-        this.age = age;
+        if (age >= 14 ) {
+            this.age = age;
+        } else {
+            System.out.print("Employee can't be less than 14 years old\n");
+        }
     }
 
     public String getEmployeeName() {
@@ -32,7 +44,11 @@ public class Employee {
     }
 
     public void setEmployeeName(String employeeName) {
-        this.employeeName = employeeName;
+        if (employeeName != null) {
+            this.employeeName = employeeName;
+        } else {
+            System.out.print("Employee Name is required!\n");
+        }
     }
 
     public String getPosition() {
@@ -40,7 +56,11 @@ public class Employee {
     }
 
     public void setPosition(String position) {
-        this.position = position;
+        if (position != null) {
+            this.position = position;
+        } else {
+            System.out.print("Employee position is required!\n");
+        }
     }
 
     public String getEmail() {
@@ -59,11 +79,11 @@ public class Employee {
         this.phone = phone;
     }
 
-    public int getSalary() {
+    public double getSalary() {
         return salary;
     }
 
-    public void setSalary(int salary) {
+    public void setSalary(double salary) {
         this.salary = salary;
     }
 
@@ -72,17 +92,39 @@ public class Employee {
     }
 
     public void setAge(int age) {
-        this.age = age;
+        if (age >= 14 ) {
+            this.age = age;
+        } else {
+            System.out.print("Employee can't be less than 14 years old\n");
+        }
+    }
+
+    public static void printEmployees(Employee employees[]) {
+        for (Employee employee : employees) {
+            System.out.println(employee.toString());
+        }
+    }
+
+    public static void printEmployees(Employee employee) {
+        System.out.println("Only 1 required employee: \n" + employee.toString() + "-------------------");
+    }
+
+    public static void filterByAge(Employee[] employees, int age){
+        for (Employee employee : employees) {
+            if (employee.getAge() > age) {
+                System.out.println(employee.toString());
+            }
+        }
     }
 
     @Override
     public String toString() {
-        return "Employee:" +
-                "Name:      " + employeeName + '\n' +
+        return "Employee:  " + employeeName + '\n' +
                 "Position:  " + position + '\n' +
                 "E-mail:    " + email + '\n' +
                 "Phone:     " + phone + '\n' +
                 "Salary:    " + salary + '\n' +
-                "Age:       " + age;
+                "Age:       " + age + '\n';
     }
+
 }
