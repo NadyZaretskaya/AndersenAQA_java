@@ -119,12 +119,12 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Employee:  " + employeeName + '\n' +
-                "Position:  " + position + '\n' +
-                "E-mail:    " + email + '\n' +
-                "Phone:     " + phone + '\n' +
-                "Salary:    " + salary + '\n' +
-                "Age:       " + age + '\n';
+        return "Employee:  " + getEmployeeName() + '\n' +
+                "Position:  " + getPosition() + '\n' +
+                "E-mail:    " + getEmail() + '\n' +
+                "Phone:     " + getPhone() + '\n' +
+                "Salary:    " + getSalary() + '\n' +
+                "Age:       " + getAge() + '\n';
     }
 
 }
