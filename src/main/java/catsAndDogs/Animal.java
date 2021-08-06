@@ -1,4 +1,4 @@
-package org.example;
+package catsAndDogs;
 
 /*
 1. Создать классы Собака и Кот с наследованием от класса Животное.
@@ -14,7 +14,7 @@ public abstract class Animal
     private String name;
     private int distance;
 
-    public Animal(String name){
+    public Animal(String name) {
         this.name = name;
     }
 
@@ -34,11 +34,11 @@ public abstract class Animal
         this.distance = distance;
     }
 
-    public void swim(int distance) {
-
+    public void swim(int distance){
+        System.out.println(getName() + " проплыл " + getDistance() + " м.");
     }
 
-    public void run(int distance) {
-
+    public void run( int distance){
+        System.out.println(getName() + " пробежал " + getDistance() + " м.");
     }
 }
