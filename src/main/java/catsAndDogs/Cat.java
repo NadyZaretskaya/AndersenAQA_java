@@ -3,9 +3,15 @@ package catsAndDogs;
 public class Cat extends Animal{
 
     private final int MAX_RUN_LENGTH = 200;
+    private static int catCount = 0;
 
     public Cat(String name){
         super(name);
+        catCount++;
+    }
+
+    public static int getCatCount() {
+        return catCount;
     }
 
     @Override

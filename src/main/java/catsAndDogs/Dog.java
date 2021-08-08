@@ -4,9 +4,15 @@ public class Dog extends Animal{
 
     private final int MAX_RUN_LENGTH = 500;
     private final int MAX_SWIM_LENGTH = 10;
+    private static int dogCount = 0;
+
+    public static int getDogCount() {
+        return dogCount;
+    }
 
     public Dog(String name){
         super(name);
+        dogCount++;
     }
 
     @Override
@@ -27,5 +33,7 @@ public class Dog extends Animal{
             System.out.println("Я столько не пробегу!");
         }
     }
+
+
 
 }

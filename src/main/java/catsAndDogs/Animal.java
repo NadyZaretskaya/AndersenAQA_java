@@ -12,33 +12,26 @@ package catsAndDogs;
 public abstract class Animal
 {
     private String name;
-    private int distance;
+    private static int count = 0;
 
     public Animal(String name) {
         this.name = name;
+        count++;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getDistance() {
-        return distance;
-    }
-
-    public void setDistance(int distance) {
-        this.distance = distance;
+    public static int getCount() {
+        return count;
     }
 
     public void swim(int distance){
-        System.out.println(getName() + " проплыл " + getDistance() + " м.");
+        System.out.println(name + " проплыл " + distance + " м.");
     }
 
     public void run( int distance){
-        System.out.println(getName() + " пробежал " + getDistance() + " м.");
+        System.out.println(name + " пробежал " + distance + " м.");
     }
 }
