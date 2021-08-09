@@ -1,20 +1,17 @@
 package shapes;
 
-public class Triangle implements Shape {
+public class Triangle extends BaseShape implements Perimeter, Area {
 
     private double a, b, c;
-    private String fillColor;
-    private String borderColor;
     public Triangle(double a, double b, double c, String fillColor, String borderColor) {
+        super(fillColor, borderColor);
         this.a = a;
         this.b = b;
         this.c = c;
-        this.fillColor = fillColor;
-        this.borderColor = borderColor;
     }
 
     public double computePerimeter(){
-        return Shape.trianglePerimeter(a, b, c);
+        return Perimeter.trianglePerimeter(a, b, c);
     }
 
     @Override
@@ -27,7 +24,7 @@ public class Triangle implements Shape {
     public String toString() {
         return "Треугольник со сторонами: " + "a = " + a + ", b = " + b + ", c = " + c + "; \n" +
                 "периметр = " + computePerimeter() + "; площадь = " + computeSquare() + "; \n" +
-                "цвет заливки - " + fillColor + "; цвет границы' - " + borderColor + "\n";
+                "цвет заливки - " + getFillColor() + "; цвет границы - " + getBorderColor() + "\n";
     }
 
 }

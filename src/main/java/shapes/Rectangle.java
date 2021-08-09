@@ -1,20 +1,17 @@
 package shapes;
 
-public class Rectangle implements Shape {
+public class Rectangle extends BaseShape implements Perimeter, Area {
 
     private double a;
     private double b;
-    private String fillColor;
-    private String borderColor;
     public Rectangle(double a, double b, String fillColor, String borderColor) {
+        super(fillColor, borderColor);
         this.a = a;
         this.b = b;
-        this.fillColor = fillColor;
-        this.borderColor = borderColor;
     }
 
     public double computePerimeter(){
-        return Shape.rectanglePerimeter(a, b);
+        return Perimeter.rectanglePerimeter(a, b);
     }
 
     @Override
@@ -26,7 +23,7 @@ public class Rectangle implements Shape {
     public String toString() {
         return "Прямоугольник со сторонами: " + "a = " + a + ", b = " + b + "; \n" +
                 "периметр = " + computePerimeter() + "; площадь = " + computeSquare() + "; \n" +
-                "цвет заливки - " + fillColor +  "; цвет границы' - " + borderColor + "\n";
+                "цвет заливки - " + getFillColor() +  "; цвет границы - " + getBorderColor() + "\n";
     }
 
 }

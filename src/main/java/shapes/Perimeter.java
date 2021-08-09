@@ -1,8 +1,8 @@
 package shapes;
 
-public interface Shape {
+public interface Perimeter {
 
-    double computeSquare();
+
 
     static double rectanglePerimeter(double a, double b) {
         double perimeter = (a + b) * 2;
