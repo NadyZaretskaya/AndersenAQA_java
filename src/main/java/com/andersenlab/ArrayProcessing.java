@@ -10,9 +10,7 @@ public class ArrayProcessing {
                 try {
                     sum += Integer.parseInt(array[i][j]);
                 } catch (NumberFormatException e) {
-                    Throwable x = new MyArrayDataException("Invalid value in: [" +
-                            i + "][" + j + "] " + e.getMessage());
-                    x.printStackTrace();
+                    throw  new MyArrayDataException(i, j);
                 }
             }
         }
